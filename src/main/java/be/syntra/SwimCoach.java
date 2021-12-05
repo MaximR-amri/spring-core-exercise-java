@@ -1,11 +1,14 @@
 package be.syntra;
 
+import org.springframework.stereotype.Component;
+
+@Component("coach")
 public class SwimCoach implements Coach {
 
     private DietService dietService;
 
-    public SwimCoach() {
-        this.dietService = new VeggieService();
+    public SwimCoach(DietService dietService) {
+        this.dietService = dietService;
     }
 
     @Override
